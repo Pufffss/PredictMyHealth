@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .navbar h1 {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Main Container */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin-top: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Boxes */
+        .box {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .box input {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        /* Info Button */
+        .info-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 50%;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .info-button:hover {
+            background-color: #ccc;
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            visibility: hidden;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            top: -30px;
+            right: 0;
+            width: 120px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .box:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            transition: left 0.3s ease;
+            z-index: 99;
+        }
+        
+        .sidebar.active {
+            left: 0;
+        }
+        
+        .menu-button,
+        .close-button {
+            position: fixed;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .menu-button {
+            left: 20px;
+        }
+        
+        .close-button {
+            right: 20px;
+            display: none;
+        }
+        
+        /* Sidebar Content */
+        .sidebar-content {
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .sidebar-content h3 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .sidebar-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .sidebar-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .box {
+                width: 100%;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .menu-button {
+                display: block;
+            }
+            
+            .close-button {
+                display: none;
+            }
+        }
+        
+        @media screen and (max-width: 768px) and (min-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+        <div class="logo">
+            <h4>PredictMyHealth</h4>
+        </div>
+    <div class="sidebar">
+        <button class="close-button">&times;</button>
+        <div class="sidebar-content">
+            <h3>Diseases</h3>
+            <ul>
+                <li>Heart Disease</li>
+                <li>Diabetes</li>
+                <li>Cancer</li>
+                <li>Stroke</li>
+                <li>Alzheimer's Disease</li>
+            </ul>
+        </div>
+    </div>
+    <button class="menu-button">&#9776;</button>
+    <div class="container">
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+        <div class="box">
+            <input type="text" placeholder="Enter value">
+            <button class="info-button">i</button>
+            <div class="tooltip">Information</div>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle sidebar
+        const menuButton = document.querySelector('.menu-button');
+        const closeButton = document.querySelector('.close-button');
+        const sidebar = document.querySelector('.sidebar');
+        const container = document.querySelector('.container');
+        
+        menuButton.addEventListener('click', function() {
+            sidebar.classList.add('active');
+            menuButton.style.display = 'none';
+            closeButton.style.display = 'block';
+            container.style.transform = 'translateX(250px)';
+        });
+        
+        closeButton.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            menuButton.style.display = 'block';
+            closeButton.style.display = 'none';
+            container.style.transform = 'translateX(0)';
+        });
+    </script>
+</body>
+</html>
