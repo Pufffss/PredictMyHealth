@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER</title>
+    
+   <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img src="" alt="">
+                    <span class="nav-item">PredictMyHealth</span>
+                </a>
+            </li>
+            <li>
+                <a href="customer.html">
+                    <i class="fa fa-child"></i>
+                    <span class="nav-item">Manage Customer</span>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-item">Manage User</span>
+                </a>
+            </li>
+            <li>
+                <a href="vault.html">
+                    <i class="fa fa-cogs"></i>
+                    <span class="nav-item">Manage Vault</span>
+                </a>
+            </li>
+            <li>
+                <a href="entity.html">
+                    <i class="fa fa-cogs"></i>
+                    <span class="nav-item">Manage Entity</span>
+                </a>
+            </li>
+            <li>
+                <a href="permission.html">
+                    <i class="fa fa-plus"></i>
+                    <span class="nav-item">Add Permissions</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="fa fa-sign-out"></i>
+                    <span class="nav-item">Log Out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- <section class="home">
+        <div class="content">
+            <div class="form-box">
+                <label for="fname"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="fname" placeholder="Enter name of user">
+    
+                <div class="role-type">
+                    <p class="heading">Role Type</p>
+                    <div class="button-group">
+                        <button type="button" class="active">Active</button>
+                        <button type="button">Inactive</button>
+                    </div>
+                </div>
+    
+                <label for="uname"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="uname" placeholder="Enter username">
+    
+                <label for="pwd"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="pwd" placeholder="Enter password">
+    
+                <label for="email"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="email" placeholder="Enter email">
+    
+                <label for="remail"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="remail" placeholder="Enter recovery email">
+    
+                <label for="phone"><i class='bx bx-user'></i></label>
+                <input type="number" name="phone" id="phone" placeholder="Enter Phone number">
+    
+                <label for="sec_phone"><i class='bx bx-user'></i></label>
+                <input type="number" name="phone" id="sec_phone" placeholder="Enter Secondary Phone number">
+    
+                <label for="sec_ques"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="sec_ques" placeholder="Enter security question">
+    
+                <label for="sec_ans"><i class='bx bx-user'></i></label>
+                <input type="text" name="name" id="sec_ans" placeholder="Enter security answer">
+            </div>
+        </div>
+    </section>
+    
+     -->
+     <section class="home">
+        <div class="contact-col">
+            
+            
+            <form action="{{ url_for('predict')}}"method="post">
+                <input type="text" name="AGE" placeholder="Percent population biking" required="required" /><br>
+                <input type="text" name="SMOKING" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                    <input type="text" name="YELLOW_FINGERS" placeholder="Percent population smoking" required="required" /><p>
+                        <br>
+                <input type="text" name="ANXIETY" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="PEER_PRESSURE" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="CHRONIC DISEASE" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="FATIGUE" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="ALLERGY" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="WHEEZING" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="ALCOHOL" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="COUGHING" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="SHORTNESS OF BREATH" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="SWALLOWING DIFFICULTY" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="CHEST PAIN" placeholder="Percent population smoking" required="required" /><p>
+                    <br>
+                <input type="text" name="GENDER" placeholder="Percent population smoking" required="required" /><p>
+                    
+        
+                    
+        
+                <button type="submit" class="btn btn-primary btn-block btn-large"><span style="color: black;"> You have Lung Cancer</span></button></p>
+            </form>
+        
+            <br>
+            <br>
+            <h9 style="color:Violet;">
+            {{ prediction_text }} </h9>
+        </div>
+    </section>
+    
+</body>
+</html>

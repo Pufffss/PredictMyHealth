@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #EFE9E9;
+    width: 70px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+a {
+    position: relative;
+    color: #555353;
+    font-size: 14px;
+    display: table;
+    width: 200px;
+    padding: 10px;
+}
+
+.fa {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: -7px;
+}
+
+a:hover {
+    background: #EFE9E9;
+}
+
+nav:hover {
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout {
+    position: absolute;
+    bottom: 20%;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4% 0;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150vh;
+    background-image: linear-gradient(to bottom right, #ffffff, #f1f1f1);
+    margin-top: -15vh;
+    margin-bottom: -15vh;
+}
+
+.content {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+    padding-right: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+input,
+select {
+    flex: 1;
+    border: 1px solid #ccc;
+    outline: none;
+    background: inherit;
+    color: black;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.rad_bt {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.rad_bt input[type="radio"] {
+    margin-right: 5px;
+}
+.button-container {
+    text-align:center; /* Center align the buttons */
+    margin-top: 20px; /* Add some top margin for spacing */
+    margin-left: 33%;
+}
+button[type="bton"] {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position:static;
+}
